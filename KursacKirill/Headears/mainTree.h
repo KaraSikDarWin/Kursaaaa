@@ -44,10 +44,10 @@ public:
         bool flag = true;
         deletel(mas,r,BRAND,MODEL,day,month,year,flag);
         if(flag){
-            cout<<"Node was deleted"<<endl;
+            qDebug()<<"Node was deleted";
             return 1;
         }else {
-            cout<<"Node wasn't deleted"<<endl;
+            qDebug()<<"Node wasn't deleted";
             return 0;
         }
     }

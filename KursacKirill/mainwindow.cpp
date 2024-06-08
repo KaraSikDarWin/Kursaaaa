@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <QTableWidget>
 #include <QStringDecoder>
+#include <QDate>
+#include <QMessageBox>
 
 class HashTable{
     int size;
@@ -23,7 +25,7 @@ private:
             Table[hash].LinkNode->AddAVLNode(p);
             NonEmptyNodes++;
             return 1;
-        } else {cout<<"Same Element"<<"\n"; return 0; }
+        } else {qDebug()<<"Same Element"; return 0; }
 
     }
 
@@ -63,7 +65,6 @@ public:
         if (!out.empty()){
             return out;
         } else return "";
-
     }
 
     int PublicAddHashNode(string NUM ,string PhoneNumberIn, string BRAND, string MODEL, int day, string month, int year){
@@ -71,8 +72,7 @@ public:
         SplitNum(NUM,mas);
         SplitPhone(PhoneNumberIn, mas);
         Elem *p = new Elem(stoi(mas[0]), mas[1], mas[2], stoi(mas[4]), mas[5], BRAND, MODEL, day, month, year);
-        addHashNode(p);
-
+        return addHashNode(p);
     }
 
     int Delete(string NUM, string PhoneNumberIn, string BRAND, string MODEL, int day, string month, int year){
@@ -80,7 +80,7 @@ public:
         SplitNum(NUM,mas);
         SplitPhone(PhoneNumberIn, mas);
         int hash = MultHash(BRAND,MODEL,stoi(mas[0]), stoi(mas[1]),mas[2]);
-        Table[hash].LinkNode->DeleteNode(mas, BRAND, MODEL,day,month,year);
+        return Table[hash].LinkNode->DeleteNode(mas, BRAND, MODEL,day,month,year);
     }
 
     void PrintHashTable(){
@@ -148,7 +148,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    connect(ui->FindNodeBtn, SIGNAL(clicked()), this, SLOT(FindBtnBtn()));
     connect(ui->InitialButton, SIGNAL(clicked()), this, SLOT(Initial()));
+    connect(ui->DeleteNodeBtn,SIGNAL(clicked()), this, SLOT(DelBtnBtn()));
+    connect(ui->AddNodeBtn,SIGNAL(clicked()),this,SLOT(AddBtnBtn()));
    // connect(this,&MainWindow::startSignal, startWin,&StartWindow::SecondSlot);
 
 
@@ -182,8 +185,77 @@ void MainWindow::Initial()
     table->PrintHashTable();
     qDebug()<<("5222");
     ui->BaseTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
+    ui->BaseTable->clear();
+    ui->BaseTable->setRowCount(0);
     MainWindow::PrintToTable();
+}
+
+void MainWindow::AddBtnBtn()
+{
+    string GosNum = ui->GovNumbLine->text().toStdString();
+    string PhoneNum = ui->PhonLine->text().toStdString();
+    string Brand = ui->BrendLine->text().toStdString();
+    string Model = ui->ModelLine->text().toStdString();
+    int day = ui->DateLine->date().day();
+    string month = to_string(ui->DateLine->date().month());
+    if (month.length()==1){
+        month ="0"+month;
+    }
+    int year = ui->DateLine->date().year();
+    if(table->PublicAddHashNode(GosNum,PhoneNum,Brand,Model,day,month,year)){
+        ui->BaseTable->clear();
+        ui->BaseTable->setRowCount(0);
+        PrintToTable();
+    }else{
+        QMessageBox Warn;
+        Warn.setIcon(QMessageBox::Critical);
+        Warn.setText("Same Combination");
+        Warn.exec();
+    }
+}
+
+void MainWindow::DelBtnBtn()
+{
+    string GosNum = ui->GovNumbLine->text().toStdString();
+    string PhoneNum = ui->PhonLine->text().toStdString();
+    string Brand = ui->BrendLine->text().toStdString();
+    string Model = ui->ModelLine->text().toStdString();
+    int day = ui->DateLine->date().day();
+    string month = to_string(ui->DateLine->date().month());
+    if (month.length()==1){
+        month ="0"+month;
+    }
+    int year = ui->DateLine->date().year();
+    if(table->Delete(GosNum, PhoneNum, Brand, Model, day, month, year)){
+        ui->BaseTable->clear();
+        ui->BaseTable->setRowCount(0);
+        PrintToTable();
+    }else{
+        QMessageBox Warn;
+        Warn.setIcon(QMessageBox::Critical);
+        Warn.setText("Node wasn't deleted");
+        Warn.exec();
+    }
+}
+
+void MainWindow::FindBtnBtn()
+{
+    string GosNum = ui->GovNumbLine->text().toStdString();
+    string PhoneNum = ui->PhonLine->text().toStdString();
+    string Brand = ui->BrendLine->text().toStdString();
+    string Model = ui->ModelLine->text().toStdString();
+    string out = "Искомая дата: \n"+table->FindDateHash(GosNum, PhoneNum, Brand, Model);
+    if (out.length()!=0){
+        QMessageBox answ ;
+        answ.setIcon(QMessageBox::Information);
+        answ.setText(QString::fromStdString(out));
+        answ.exec();
+    }else{
+        QMessageBox answ;
+        answ.setIcon(QMessageBox::Critical);
+        answ.setText("Isn't find");
+        answ.exec();
+    }
 }
 
 void MainWindow::AddRow(Circle* p){

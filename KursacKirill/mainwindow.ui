@@ -33,7 +33,7 @@
      <enum>QAbstractItemView::DragDropMode::NoDragDrop</enum>
     </property>
     <attribute name="horizontalHeaderCascadingSectionResizes">
-     <bool>false</bool>
+     <bool>true</bool>
     </attribute>
     <column>
      <property name="text">
@@ -42,25 +42,60 @@
      <property name="textAlignment">
       <set>AlignHCenter|AlignTop</set>
      </property>
+     <property name="background">
+      <color>
+       <red>250</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Номер телефона</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>59</red>
+       <green>0</green>
+       <blue>255</blue>
+      </color>
      </property>
     </column>
     <column>
      <property name="text">
       <string>Марка авто</string>
      </property>
+     <property name="background">
+      <color>
+       <red>38</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Модель авто</string>
      </property>
+     <property name="background">
+      <color>
+       <red>240</red>
+       <green>253</green>
+       <blue>0</blue>
+      </color>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Дата</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>255</red>
+       <green>0</green>
+       <blue>221</blue>
+      </color>
      </property>
     </column>
    </widget>
@@ -74,7 +109,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string>Инициализация</string>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
@@ -90,6 +125,148 @@
         </widget>
        </item>
       </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="AddNodeBtn">
+    <property name="geometry">
+     <rect>
+      <x>811</x>
+      <y>405</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>400</y>
+      <width>201</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Дата</string>
+    </property>
+    <widget class="QDateEdit" name="DateLine">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>181</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="DeleteNodeBtn">
+    <property name="geometry">
+     <rect>
+      <x>811</x>
+      <y>431</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="FindNodeBtn">
+    <property name="geometry">
+     <rect>
+      <x>811</x>
+      <y>457</y>
+      <width>80</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FindDate</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>400</y>
+      <width>581</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Гос. номер</string>
+       </property>
+       <widget class="QLineEdit" name="GovNumbLine">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Номер телефона</string>
+       </property>
+       <widget class="QLineEdit" name="PhonLine">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string>Бренд авто</string>
+       </property>
+       <widget class="QLineEdit" name="BrendLine">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="title">
+        <string>Марка авто</string>
+       </property>
+       <widget class="QLineEdit" name="ModelLine">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
      </item>
     </layout>
    </widget>

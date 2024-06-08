@@ -26,6 +26,9 @@ signals:
 public slots:
     void startSignal(int string, int filelength);
     void Initial();
+    void AddBtnBtn();
+    void DelBtnBtn();
+    void FindBtnBtn();
 
 public:
     void WalkCirle(Circle *head);
