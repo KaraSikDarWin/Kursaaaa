@@ -102,9 +102,9 @@
    <widget class="QGroupBox" name="InitialBox">
     <property name="geometry">
      <rect>
-      <x>643</x>
+      <x>503</x>
       <y>280</y>
-      <width>251</width>
+      <width>391</width>
       <height>56</height>
      </rect>
     </property>
@@ -120,7 +120,14 @@
        <item>
         <widget class="QPushButton" name="InitialButton">
          <property name="text">
-          <string>PushButton</string>
+          <string>Загрузить данные</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="SaveBtnBtn">
+         <property name="text">
+          <string>Сохранить</string>
          </property>
         </widget>
        </item>
@@ -138,7 +145,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Add</string>
+     <string>Добавить</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_5">
@@ -174,7 +181,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Delete</string>
+     <string>Удалить</string>
     </property>
    </widget>
    <widget class="QPushButton" name="FindNodeBtn">
@@ -187,10 +194,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>FindDate</string>
+     <string>Найти дату</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>

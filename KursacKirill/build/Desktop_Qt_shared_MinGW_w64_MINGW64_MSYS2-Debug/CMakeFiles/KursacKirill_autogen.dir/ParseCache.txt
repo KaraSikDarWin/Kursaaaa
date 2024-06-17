@@ -96,10 +96,12 @@ D:/NormKursac/KursacKirill/mainwindow.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_list.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_map.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multimap.h
+ mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multiset.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_numeric.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_pair.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_raw_storage_iter.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_relops.h
+ mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_set.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tempbuf.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tree.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_uninitialized.h
@@ -162,6 +164,7 @@ D:/NormKursac/KursacKirill/mainwindow.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/pstl/execution_defs.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/pstl/glue_numeric_defs.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/ratio
+ mdp:D:/msys64/mingw64/include/c++/14.1.0/set
  mdp:D:/msys64/mingw64/include/c++/14.1.0/stdexcept
  mdp:D:/msys64/mingw64/include/c++/14.1.0/streambuf
  mdp:D:/msys64/mingw64/include/c++/14.1.0/string
@@ -215,6 +218,7 @@ D:/NormKursac/KursacKirill/mainwindow.h
  mdp:D:/msys64/mingw64/include/pthread_signal.h
  mdp:D:/msys64/mingw64/include/pthread_time.h
  mdp:D:/msys64/mingw64/include/pthread_unistd.h
+ mdp:D:/msys64/mingw64/include/qt6/QtCore/QTextStream
  mdp:D:/msys64/mingw64/include/qt6/QtCore/q20functional.h
  mdp:D:/msys64/mingw64/include/qt6/QtCore/q20memory.h
  mdp:D:/msys64/mingw64/include/qt6/QtCore/q20type_traits.h
@@ -358,7 +362,11 @@ D:/NormKursac/KursacKirill/mainwindow.h
  mdp:D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h
  mdp:D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qtabwidget.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qtwidgets-config.h
@@ -482,10 +490,12 @@ D:/NormKursac/KursacKirill/startwindow.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_list.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_map.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multimap.h
+ mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multiset.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_numeric.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_pair.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_raw_storage_iter.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_relops.h
+ mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_set.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tempbuf.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tree.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/bits/stl_uninitialized.h
@@ -548,6 +558,7 @@ D:/NormKursac/KursacKirill/startwindow.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/pstl/execution_defs.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/pstl/glue_numeric_defs.h
  mdp:D:/msys64/mingw64/include/c++/14.1.0/ratio
+ mdp:D:/msys64/mingw64/include/c++/14.1.0/set
  mdp:D:/msys64/mingw64/include/c++/14.1.0/stdexcept
  mdp:D:/msys64/mingw64/include/c++/14.1.0/streambuf
  mdp:D:/msys64/mingw64/include/c++/14.1.0/string
@@ -601,6 +612,7 @@ D:/NormKursac/KursacKirill/startwindow.h
  mdp:D:/msys64/mingw64/include/pthread_signal.h
  mdp:D:/msys64/mingw64/include/pthread_time.h
  mdp:D:/msys64/mingw64/include/pthread_unistd.h
+ mdp:D:/msys64/mingw64/include/qt6/QtCore/QTextStream
  mdp:D:/msys64/mingw64/include/qt6/QtCore/q20functional.h
  mdp:D:/msys64/mingw64/include/qt6/QtCore/q20memory.h
  mdp:D:/msys64/mingw64/include/qt6/QtCore/q20type_traits.h
@@ -745,8 +757,11 @@ D:/NormKursac/KursacKirill/startwindow.h
  mdp:D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/QDialog
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h
+ mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qtabwidget.h
  mdp:D:/msys64/mingw64/include/qt6/QtWidgets/qtwidgets-config.h

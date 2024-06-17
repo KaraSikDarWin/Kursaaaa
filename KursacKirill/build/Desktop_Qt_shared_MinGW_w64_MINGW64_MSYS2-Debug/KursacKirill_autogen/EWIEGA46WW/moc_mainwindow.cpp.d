@@ -88,10 +88,12 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_list.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_map.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multimap.h \
+  D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multiset.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_numeric.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_pair.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_raw_storage_iter.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_relops.h \
+  D:/msys64/mingw64/include/c++/14.1.0/bits/stl_set.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tempbuf.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tree.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_uninitialized.h \
@@ -154,6 +156,7 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/pstl/execution_defs.h \
   D:/msys64/mingw64/include/c++/14.1.0/pstl/glue_numeric_defs.h \
   D:/msys64/mingw64/include/c++/14.1.0/ratio \
+  D:/msys64/mingw64/include/c++/14.1.0/set \
   D:/msys64/mingw64/include/c++/14.1.0/stdexcept \
   D:/msys64/mingw64/include/c++/14.1.0/streambuf \
   D:/msys64/mingw64/include/c++/14.1.0/string \
@@ -207,6 +210,7 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/pthread_signal.h \
   D:/msys64/mingw64/include/pthread_time.h \
   D:/msys64/mingw64/include/pthread_unistd.h \
+  D:/msys64/mingw64/include/qt6/QtCore/QTextStream \
   D:/msys64/mingw64/include/qt6/QtCore/q20functional.h \
   D:/msys64/mingw64/include/qt6/QtCore/q20memory.h \
   D:/msys64/mingw64/include/qt6/QtCore/q20type_traits.h \
@@ -350,7 +354,11 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
   D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
+  D:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox \
+  D:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \
+  D:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h \
+  D:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qtabwidget.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qtwidgets-config.h \

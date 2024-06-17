@@ -57,10 +57,10 @@ public:
     }
 
     string FindDateAVL(vector<string> &mas, string Brand, string Model){
-        string out;
-        if(FindDate(r, mas,Brand,Model,out)){
-            return out;
-        } else return "";
+        string out ="";
+        FindDate(r, mas,Brand,Model,out);
+        return out;
+
 
     }
 
@@ -283,18 +283,19 @@ private:
 
 
 
-    bool FindDate(Node* p, vector<string> &mas, string Brand, string Model, string &out){
-        if (p== nullptr){
-            return 0;
-        } else if (DataBigX(p->data->Circledata->phoneNumber, 8, stoi(mas[4]), mas[5])==1){
+    void FindDate(Node* p, vector<string> &mas, string Brand, string Model, string &out){
+        if (p != nullptr){
+
+         if (DataBigX(p->data->Circledata->phoneNumber, 8, stoi(mas[4]), mas[5])==1){
             FindDate(p->left, mas, Brand, Model,out);
         }else if (DataBigX(p->data->Circledata->phoneNumber,8, stoi(mas[4]), mas[5])==0) {
             FindDate(p->right, mas, Brand, Model, out);
         }else {
-            if(SearchingDateFIND(p->data,mas, Brand, Model,out)) return 1;
-            else return 0;
+            SearchingDateFIND(p->data,mas, Brand, Model, out);
         }
     }
+}
+
 
 
 };

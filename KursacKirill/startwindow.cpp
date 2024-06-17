@@ -11,7 +11,7 @@ void StartWindow::clHashTableInBtn()
 {
     int filesize=0;
     qDebug()<<"Go to MainWindow";
-    QFile inputFile("D:/Kursac/untitled/KursaCInput.txt");
+    QFile inputFile("D:/NormKursac/KursacKirill/DataBase.txt");
     if (inputFile.open(QIODevice::ReadOnly)){
         QTextStream in(&inputFile);
         while(!in.atEnd()){

@@ -35,12 +35,13 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpinBox *InitialSpin;
     QPushButton *InitialButton;
+    QPushButton *SaveBtnBtn;
     QPushButton *AddNodeBtn;
     QGroupBox *groupBox_5;
     QDateEdit *DateLine;
     QPushButton *DeleteNodeBtn;
     QPushButton *FindNodeBtn;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_3;
     QGroupBox *groupBox;
     QLineEdit *GovNumbLine;
@@ -86,7 +87,7 @@ public:
         BaseTable->horizontalHeader()->setCascadingSectionResizes(true);
         InitialBox = new QGroupBox(centralwidget);
         InitialBox->setObjectName("InitialBox");
-        InitialBox->setGeometry(QRect(643, 280, 251, 56));
+        InitialBox->setGeometry(QRect(503, 280, 391, 56));
         horizontalLayout_2 = new QHBoxLayout(InitialBox);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout = new QHBoxLayout();
@@ -100,6 +101,11 @@ public:
         InitialButton->setObjectName("InitialButton");
 
         horizontalLayout->addWidget(InitialButton);
+
+        SaveBtnBtn = new QPushButton(InitialBox);
+        SaveBtnBtn->setObjectName("SaveBtnBtn");
+
+        horizontalLayout->addWidget(SaveBtnBtn);
 
 
         horizontalLayout_2->addLayout(horizontalLayout);
@@ -119,13 +125,13 @@ public:
         FindNodeBtn = new QPushButton(centralwidget);
         FindNodeBtn->setObjectName("FindNodeBtn");
         FindNodeBtn->setGeometry(QRect(811, 457, 80, 18));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(0, 400, 581, 81));
-        horizontalLayout_3 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(0, 400, 581, 81));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        groupBox = new QGroupBox(widget);
+        groupBox = new QGroupBox(layoutWidget);
         groupBox->setObjectName("groupBox");
         GovNumbLine = new QLineEdit(groupBox);
         GovNumbLine->setObjectName("GovNumbLine");
@@ -133,7 +139,7 @@ public:
 
         horizontalLayout_3->addWidget(groupBox);
 
-        groupBox_2 = new QGroupBox(widget);
+        groupBox_2 = new QGroupBox(layoutWidget);
         groupBox_2->setObjectName("groupBox_2");
         PhonLine = new QLineEdit(groupBox_2);
         PhonLine->setObjectName("PhonLine");
@@ -141,7 +147,7 @@ public:
 
         horizontalLayout_3->addWidget(groupBox_2);
 
-        groupBox_3 = new QGroupBox(widget);
+        groupBox_3 = new QGroupBox(layoutWidget);
         groupBox_3->setObjectName("groupBox_3");
         BrendLine = new QLineEdit(groupBox_3);
         BrendLine->setObjectName("BrendLine");
@@ -149,7 +155,7 @@ public:
 
         horizontalLayout_3->addWidget(groupBox_3);
 
-        groupBox_4 = new QGroupBox(widget);
+        groupBox_4 = new QGroupBox(layoutWidget);
         groupBox_4->setObjectName("groupBox_4");
         ModelLine = new QLineEdit(groupBox_4);
         ModelLine->setObjectName("ModelLine");
@@ -182,11 +188,12 @@ public:
         QTableWidgetItem *___qtablewidgetitem4 = BaseTable->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "\320\224\320\260\321\202\320\260", nullptr));
         InitialBox->setTitle(QCoreApplication::translate("MainWindow", "\320\230\320\275\320\270\321\206\320\270\320\260\320\273\320\270\320\267\320\260\321\206\320\270\321\217", nullptr));
-        InitialButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        AddNodeBtn->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
+        InitialButton->setText(QCoreApplication::translate("MainWindow", "\320\227\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \320\264\320\260\320\275\320\275\321\213\320\265", nullptr));
+        SaveBtnBtn->setText(QCoreApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
+        AddNodeBtn->setText(QCoreApplication::translate("MainWindow", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214", nullptr));
         groupBox_5->setTitle(QCoreApplication::translate("MainWindow", "\320\224\320\260\321\202\320\260", nullptr));
-        DeleteNodeBtn->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
-        FindNodeBtn->setText(QCoreApplication::translate("MainWindow", "FindDate", nullptr));
+        DeleteNodeBtn->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", nullptr));
+        FindNodeBtn->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\320\271\321\202\320\270 \320\264\320\260\321\202\321\203", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\320\223\320\276\321\201. \320\275\320\276\320\274\320\265\321\200", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\320\221\321\200\320\265\320\275\320\264 \320\260\320\262\321\202\320\276", nullptr));

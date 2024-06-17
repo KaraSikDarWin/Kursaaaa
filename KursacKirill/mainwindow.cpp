@@ -104,7 +104,7 @@ public:
         cout<<"Reading data started..."<<endl;
         string b;
 
-        QFile inputFile("D:/Kursac/untitled/KursaCInput.txt");
+        QFile inputFile("D:/NormKursac/KursacKirill/DataBase.txt");
         if (inputFile.open(QIODevice::ReadOnly)){
             QTextStream in(&inputFile);
             for(int i = 0 ; i<N; i++){
@@ -121,6 +121,10 @@ public:
         cout<<"Reading data finished..."<<endl;
     }
 
+    void ClearTable(){
+        Table.clear();
+    }
+
     int IsSize(){
         return size;
     }
@@ -135,12 +139,8 @@ public:
 
 };
 
-
 HashTable * table = nullptr;
 int lines =0;
-
-
-
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -151,13 +151,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->FindNodeBtn, SIGNAL(clicked()), this, SLOT(FindBtnBtn()));
     connect(ui->InitialButton, SIGNAL(clicked()), this, SLOT(Initial()));
     connect(ui->DeleteNodeBtn,SIGNAL(clicked()), this, SLOT(DelBtnBtn()));
+    connect(ui->SaveBtnBtn, SIGNAL(clicked()), this, SLOT(SaveBtn()));
     connect(ui->AddNodeBtn,SIGNAL(clicked()),this,SLOT(AddBtnBtn()));
    // connect(this,&MainWindow::startSignal, startWin,&StartWindow::SecondSlot);
-
-
-    //table->PrintHashTable();
-
-
 }
 
 MainWindow::~MainWindow()
@@ -168,7 +164,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::startSignal(int string, int filelength)
 {
-    qDebug()<<"525252525252552252552";
     HashTable* temptable = new HashTable(10);
     swap(table,temptable);
     delete temptable;
@@ -183,11 +178,20 @@ void MainWindow::Initial()
 
     table->Create(countOfline,"dadad");
     table->PrintHashTable();
-    qDebug()<<("5222");
     ui->BaseTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->BaseTable->clear();
+    ui->BaseTable->clearContents();
     ui->BaseTable->setRowCount(0);
     MainWindow::PrintToTable();
+}
+
+void MainWindow::SaveBtn(){
+    qDebug()<<"Save";
+    QFile fileout("D:/NormKursac/KursacKirill/DataBase.txt");
+    if(fileout.open(QIODevice::WriteOnly | QIODevice::Text)){
+        QTextStream writestream(&fileout);
+        PrintToTableWrite(writestream);
+    }
+    fileout.close();
 }
 
 void MainWindow::AddBtnBtn()
@@ -202,16 +206,20 @@ void MainWindow::AddBtnBtn()
         month ="0"+month;
     }
     int year = ui->DateLine->date().year();
-    if(table->PublicAddHashNode(GosNum,PhoneNum,Brand,Model,day,month,year)){
-        ui->BaseTable->clear();
-        ui->BaseTable->setRowCount(0);
-        PrintToTable();
-    }else{
-        QMessageBox Warn;
-        Warn.setIcon(QMessageBox::Critical);
-        Warn.setText("Same Combination");
-        Warn.exec();
-    }
+
+    int status = CheckCorrectField(GosNum,PhoneNum, Brand, Model);
+    if (status ==1){
+        if(table->PublicAddHashNode(GosNum,PhoneNum,Brand,Model,day,month,year)){
+            ui->BaseTable->clearContents();
+            ui->BaseTable->setRowCount(0);
+            PrintToTable();
+        }else{
+            QMessageBox Warn;
+            Warn.setIcon(QMessageBox::Critical);
+            Warn.setText("Такая комбинация уже имеется в базе");
+            Warn.exec();
+        }
+    }else ErrorHandler(status);
 }
 
 void MainWindow::DelBtnBtn()
@@ -226,16 +234,20 @@ void MainWindow::DelBtnBtn()
         month ="0"+month;
     }
     int year = ui->DateLine->date().year();
-    if(table->Delete(GosNum, PhoneNum, Brand, Model, day, month, year)){
-        ui->BaseTable->clear();
-        ui->BaseTable->setRowCount(0);
-        PrintToTable();
-    }else{
-        QMessageBox Warn;
-        Warn.setIcon(QMessageBox::Critical);
-        Warn.setText("Node wasn't deleted");
-        Warn.exec();
-    }
+    int status = CheckCorrectField(GosNum,PhoneNum, Brand, Model);
+
+    if(status==1){
+        if(table->Delete(GosNum, PhoneNum, Brand, Model, day, month, year)){
+            ui->BaseTable->clearContents();
+            ui->BaseTable->setRowCount(0);
+            PrintToTable();
+        }else{
+            QMessageBox Warn;
+            Warn.setIcon(QMessageBox::Critical);
+            Warn.setText("Элемент не был удален. Не найден.");
+            Warn.exec();
+        }
+    }else ErrorHandler(status);
 }
 
 void MainWindow::FindBtnBtn()
@@ -244,18 +256,23 @@ void MainWindow::FindBtnBtn()
     string PhoneNum = ui->PhonLine->text().toStdString();
     string Brand = ui->BrendLine->text().toStdString();
     string Model = ui->ModelLine->text().toStdString();
-    string out = "Искомая дата: \n"+table->FindDateHash(GosNum, PhoneNum, Brand, Model);
-    if (out.length()!=0){
-        QMessageBox answ ;
-        answ.setIcon(QMessageBox::Information);
-        answ.setText(QString::fromStdString(out));
-        answ.exec();
-    }else{
-        QMessageBox answ;
-        answ.setIcon(QMessageBox::Critical);
-        answ.setText("Isn't find");
-        answ.exec();
-    }
+    int status = CheckCorrectField(GosNum,PhoneNum, Brand, Model);
+
+    if (status==1){
+        string out =table->FindDateHash(GosNum, PhoneNum, Brand, Model);
+        if (out.length()!=0){
+            out = "Искомая дата: \n"+out;
+            QMessageBox answ ;
+            answ.setIcon(QMessageBox::Information);
+            answ.setText(QString::fromStdString(out));
+            answ.exec();
+        }else{
+            QMessageBox answ;
+            answ.setIcon(QMessageBox::Critical);
+            answ.setText("Элемент не был найден");
+            answ.exec();
+        }
+    }else ErrorHandler(status);
 }
 
 void MainWindow::AddRow(Circle* p){
@@ -293,25 +310,52 @@ inline void MainWindow::WalkCirle(Circle* head){//напечатать спис�
 
         }
         MainWindow::AddRow(run);
-
-
+        }
     }
-
-    //else cout<<"List doesn't exist!"<<endl;
-}//
 }
 
-void MainWindow::WalkTree(Node* t, int n){ //Распечатать дерево
+void MainWindow::WalkTree(Node* t){
     if (t!= nullptr){
-        MainWindow::WalkTree(t->left,n+20);
-        MainWindow::WalkTree(t->right,n+20);
+        MainWindow::WalkTree(t->left);
+        MainWindow::WalkTree(t->right);
         MainWindow::WalkCirle(t->data);
     }
 }
 
 void MainWindow::PrintToTable(){
     for(int i =0; i<table->IsSize(); i++){
-        MainWindow::WalkTree(table->isVector()[i].LinkNode->rootIs(), 20);
+        MainWindow::WalkTree(table->isVector()[i].LinkNode->rootIs());
     }
 }
 
+inline void MainWindow::WalkCirleWrite(Circle* head, QTextStream &writestream){//напечатать список указатель на который в каждом узле
+    if (head!= nullptr) {
+        Circle *run = head;
+        if (head->next==head){
+            writestream<<QString::fromStdString(StringTo(head->Circledata))+'\n';
+
+        }else{
+            while (run->next != head) {
+
+                writestream<<QString::fromStdString(StringTo(run->Circledata))+'\n';
+                run = run->next;
+
+            }
+            writestream<<QString::fromStdString(StringTo(run->Circledata))+'\n';
+        }
+    }
+}
+
+void MainWindow::WalkTreeWrite(Node* t,QTextStream &writestream){
+    if (t!= nullptr){
+        MainWindow::WalkTreeWrite(t->left, writestream);
+        MainWindow::WalkTreeWrite(t->right, writestream);
+        MainWindow::WalkCirleWrite(t->data, writestream);
+    }
+}
+
+void MainWindow::PrintToTableWrite(QTextStream &writestream){
+    for(int i =0; i<table->IsSize(); i++){
+        MainWindow::WalkTreeWrite(table->isVector()[i].LinkNode->rootIs(), writestream);
+    }
+}

@@ -78,7 +78,7 @@ inline bool SearchingDate(Circle* head, int day, string month , int year){//Пр
         if (flag) {
             return flag;
         } else return flag;
-    }else cout<<"List doesn't exists!"<<endl;
+    }
 }//
 
 inline bool SearchingDateFIND(Circle* &head, vector<string> &mas,string Brand, string Model, string &out){
@@ -99,8 +99,8 @@ inline bool SearchingDateFIND(Circle* &head, vector<string> &mas,string Brand, s
         if (flag) {
             return 1;
         } else return 0;
-    }else cout<<"List doesn't exists!"<<endl;
-};
+    }
+}
 
 inline bool SearchingNumbAndMB(Circle* head, vector<string> &mas, string Brand, string Model) {//Проверка наличия элемента в списке указатель на который находится в каждом узле
     if (head != nullptr) {
@@ -118,7 +118,7 @@ inline bool SearchingNumbAndMB(Circle* head, vector<string> &mas, string Brand, 
 
         return flag;
 
-    } else cout << "List doesn't exists!" << endl;
+    }
 }
 
 inline void DelCircle(Circle* &head){
