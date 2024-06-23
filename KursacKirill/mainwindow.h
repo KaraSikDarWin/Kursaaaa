@@ -4,6 +4,7 @@
 #include "D:/NormKursac/KursacKirill/Headears/SupportFunctions.h"
 #include <QMainWindow>
 #include <QTextStream>
+#include "debugwindow.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -17,11 +18,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 signals:
-
+    void toDebugSignal();
 
 
 public slots:
@@ -31,6 +33,7 @@ public slots:
     void DelBtnBtn();
     void FindBtnBtn();
     void SaveBtn();
+    void HelpBtn();
 public:
     void WalkCirle(Circle *head);
     void WalkTree(Node *t);
@@ -39,8 +42,11 @@ public:
     void WalkCirleWrite(Circle *head, QTextStream &writestream);
     void WalkTreeWrite(Node *t, QTextStream &writestream);
     void PrintToTableWrite(QTextStream &writestream);
+    void PrintTrDebug(Node* t, int n);
+    void PrintCircleDebug(Circle* head, string &sub);
+    void PrintHashTableDebug();
 private:
     Ui::MainWindow *ui;
-
+    DebugWindow* deb {};
 };
 #endif // MAINWINDOW_H

@@ -20,7 +20,9 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,7 +31,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QTableWidget *BaseTable;
     QGroupBox *InitialBox;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -51,6 +52,12 @@ public:
     QLineEdit *BrendLine;
     QGroupBox *groupBox_4;
     QLineEdit *ModelLine;
+    QPushButton *HelpBtn;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QTableWidget *BaseTable;
+    QWidget *tab_2;
+    QTextEdit *DebugTab;
     QMenuBar *menubar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -60,34 +67,9 @@ public:
         MainWindow->resize(907, 500);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        BaseTable = new QTableWidget(centralwidget);
-        if (BaseTable->columnCount() < 5)
-            BaseTable->setColumnCount(5);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        __qtablewidgetitem->setTextAlignment(Qt::AlignHCenter|Qt::AlignTop);
-        __qtablewidgetitem->setBackground(QColor(250, 0, 0));
-        BaseTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        __qtablewidgetitem1->setBackground(QColor(59, 0, 255));
-        BaseTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        __qtablewidgetitem2->setBackground(QColor(38, 255, 0));
-        BaseTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        __qtablewidgetitem3->setBackground(QColor(240, 253, 0));
-        BaseTable->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        __qtablewidgetitem4->setBackground(QColor(255, 0, 221));
-        BaseTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
-        BaseTable->setObjectName("BaseTable");
-        BaseTable->setGeometry(QRect(0, 0, 901, 271));
-        BaseTable->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
-        BaseTable->setDragDropOverwriteMode(true);
-        BaseTable->setDragDropMode(QAbstractItemView::DragDropMode::NoDragDrop);
-        BaseTable->horizontalHeader()->setCascadingSectionResizes(true);
         InitialBox = new QGroupBox(centralwidget);
         InitialBox->setObjectName("InitialBox");
-        InitialBox->setGeometry(QRect(503, 280, 391, 56));
+        InitialBox->setGeometry(QRect(500, 280, 401, 61));
         horizontalLayout_2 = new QHBoxLayout(InitialBox);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout = new QHBoxLayout();
@@ -163,6 +145,48 @@ public:
 
         horizontalLayout_3->addWidget(groupBox_4);
 
+        HelpBtn = new QPushButton(centralwidget);
+        HelpBtn->setObjectName("HelpBtn");
+        HelpBtn->setGeometry(QRect(810, 360, 81, 20));
+        HelpBtn->setIconSize(QSize(15, 100));
+        tabWidget = new QTabWidget(centralwidget);
+        tabWidget->setObjectName("tabWidget");
+        tabWidget->setGeometry(QRect(0, 0, 901, 281));
+        tab = new QWidget();
+        tab->setObjectName("tab");
+        BaseTable = new QTableWidget(tab);
+        if (BaseTable->columnCount() < 5)
+            BaseTable->setColumnCount(5);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        __qtablewidgetitem->setTextAlignment(Qt::AlignHCenter|Qt::AlignTop);
+        __qtablewidgetitem->setBackground(QColor(250, 0, 0));
+        BaseTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        __qtablewidgetitem1->setBackground(QColor(59, 0, 255));
+        BaseTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        __qtablewidgetitem2->setBackground(QColor(38, 255, 0));
+        BaseTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        __qtablewidgetitem3->setBackground(QColor(240, 253, 0));
+        BaseTable->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        __qtablewidgetitem4->setBackground(QColor(255, 0, 221));
+        BaseTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        BaseTable->setObjectName("BaseTable");
+        BaseTable->setGeometry(QRect(0, 0, 901, 261));
+        BaseTable->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        BaseTable->setDragDropOverwriteMode(true);
+        BaseTable->setDragDropMode(QAbstractItemView::DragDropMode::NoDragDrop);
+        BaseTable->horizontalHeader()->setCascadingSectionResizes(true);
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName("tab_2");
+        DebugTab = new QTextEdit(tab_2);
+        DebugTab->setObjectName("DebugTab");
+        DebugTab->setGeometry(QRect(0, 0, 891, 251));
+        DebugTab->setReadOnly(true);
+        tabWidget->addTab(tab_2, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -171,22 +195,15 @@ public:
 
         retranslateUi(MainWindow);
 
+        tabWidget->setCurrentIndex(0);
+
+
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = BaseTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "\320\223\320\276\321\201. \320\275\320\276\320\274\320\265\321\200", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = BaseTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = BaseTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\200\320\272\320\260 \320\260\320\262\321\202\320\276", nullptr));
-        QTableWidgetItem *___qtablewidgetitem3 = BaseTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "\320\234\320\276\320\264\320\265\320\273\321\214 \320\260\320\262\321\202\320\276", nullptr));
-        QTableWidgetItem *___qtablewidgetitem4 = BaseTable->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "\320\224\320\260\321\202\320\260", nullptr));
         InitialBox->setTitle(QCoreApplication::translate("MainWindow", "\320\230\320\275\320\270\321\206\320\270\320\260\320\273\320\270\320\267\320\260\321\206\320\270\321\217", nullptr));
         InitialButton->setText(QCoreApplication::translate("MainWindow", "\320\227\320\260\320\263\321\200\321\203\320\267\320\270\321\202\321\214 \320\264\320\260\320\275\320\275\321\213\320\265", nullptr));
         SaveBtnBtn->setText(QCoreApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", nullptr));
@@ -198,6 +215,19 @@ public:
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\320\221\321\200\320\265\320\275\320\264 \320\260\320\262\321\202\320\276", nullptr));
         groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\200\320\272\320\260 \320\260\320\262\321\202\320\276", nullptr));
+        HelpBtn->setText(QCoreApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = BaseTable->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "\320\223\320\276\321\201. \320\275\320\276\320\274\320\265\321\200", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = BaseTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = BaseTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\200\320\272\320\260 \320\260\320\262\321\202\320\276", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = BaseTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "\320\234\320\276\320\264\320\265\320\273\321\214 \320\260\320\262\321\202\320\276", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = BaseTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "\320\224\320\260\321\202\320\260", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "\320\221\320\260\320\267\320\260 \320\264\320\260\320\275\320\275\321\213\321\205", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "\320\236\321\202\320\273\320\260\320\264\320\272\320\260", nullptr));
     } // retranslateUi
 
 };

@@ -81,6 +81,14 @@ build CMakeFiles/KursacKirill.dir/startwindow.cpp.obj: CXX_COMPILER__KursacKiril
   OBJECT_DIR = CMakeFiles\KursacKirill.dir
   OBJECT_FILE_DIR = CMakeFiles\KursacKirill.dir
 
+build CMakeFiles/KursacKirill.dir/debugwindow.cpp.obj: CXX_COMPILER__KursacKirill_unscanned_Debug D$:/NormKursac/KursacKirill/debugwindow.cpp || cmake_object_order_depends_target_KursacKirill
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = CMakeFiles\KursacKirill.dir\debugwindow.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/KursacKirill_autogen/include -isystem D:/msys64/mingw64/include/qt6/QtCore -isystem D:/msys64/mingw64/include/qt6 -isystem D:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem D:/msys64/mingw64/include/qt6/QtWidgets -isystem D:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles\KursacKirill.dir
+  OBJECT_FILE_DIR = CMakeFiles\KursacKirill.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target KursacKirill
@@ -89,7 +97,7 @@ build CMakeFiles/KursacKirill.dir/startwindow.cpp.obj: CXX_COMPILER__KursacKiril
 #############################################
 # Link the executable KursacKirill.exe
 
-build KursacKirill.exe: CXX_EXECUTABLE_LINKER__KursacKirill_Debug CMakeFiles/KursacKirill.dir/KursacKirill_autogen/mocs_compilation.cpp.obj CMakeFiles/KursacKirill.dir/main.cpp.obj CMakeFiles/KursacKirill.dir/mainwindow.cpp.obj CMakeFiles/KursacKirill.dir/startwindow.cpp.obj | D$:/msys64/mingw64/lib/libQt6Widgets.dll.a D$:/msys64/mingw64/lib/libQt6Gui.dll.a D$:/msys64/mingw64/lib/libQt6Core.dll.a D$:/msys64/mingw64/lib/libQt6EntryPoint.a || KursacKirill_autogen KursacKirill_autogen_timestamp_deps
+build KursacKirill.exe: CXX_EXECUTABLE_LINKER__KursacKirill_Debug CMakeFiles/KursacKirill.dir/KursacKirill_autogen/mocs_compilation.cpp.obj CMakeFiles/KursacKirill.dir/main.cpp.obj CMakeFiles/KursacKirill.dir/mainwindow.cpp.obj CMakeFiles/KursacKirill.dir/startwindow.cpp.obj CMakeFiles/KursacKirill.dir/debugwindow.cpp.obj | D$:/msys64/mingw64/lib/libQt6Widgets.dll.a D$:/msys64/mingw64/lib/libQt6Gui.dll.a D$:/msys64/mingw64/lib/libQt6Core.dll.a D$:/msys64/mingw64/lib/libQt6EntryPoint.a || KursacKirill_autogen KursacKirill_autogen_timestamp_deps
   FLAGS = -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = D:/msys64/mingw64/lib/libQt6Widgets.dll.a  D:/msys64/mingw64/lib/libQt6Gui.dll.a  D:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -lmingw32  D:/msys64/mingw64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -175,7 +183,7 @@ build KursacKirill_autogen_timestamp_deps: phony
 #############################################
 # Utility command for KursacKirill_autogen
 
-build KursacKirill_autogen: phony CMakeFiles/KursacKirill_autogen KursacKirill_autogen/include/ui_mainwindow.h KursacKirill_autogen/include/ui_startwindow.h KursacKirill_autogen/timestamp KursacKirill_autogen/mocs_compilation.cpp KursacKirill_autogen_timestamp_deps
+build KursacKirill_autogen: phony CMakeFiles/KursacKirill_autogen KursacKirill_autogen/include/ui_mainwindow.h KursacKirill_autogen/include/ui_startwindow.h KursacKirill_autogen/include/ui_debugwindow.h KursacKirill_autogen/include/ui_mainwindow_1.h KursacKirill_autogen/timestamp KursacKirill_autogen/mocs_compilation.cpp KursacKirill_autogen_timestamp_deps
 
 
 #############################################
@@ -192,7 +200,7 @@ build KursacKirill_autogen/timestamp KursacKirill_autogen/mocs_compilation.cpp |
 #############################################
 # Phony custom command for CMakeFiles\KursacKirill_autogen
 
-build CMakeFiles/KursacKirill_autogen KursacKirill_autogen/include/ui_mainwindow.h KursacKirill_autogen/include/ui_startwindow.h | ${cmake_ninja_workdir}CMakeFiles/KursacKirill_autogen ${cmake_ninja_workdir}KursacKirill_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}KursacKirill_autogen/include/ui_startwindow.h: phony KursacKirill_autogen/timestamp || KursacKirill_autogen_timestamp_deps
+build CMakeFiles/KursacKirill_autogen KursacKirill_autogen/include/ui_mainwindow.h KursacKirill_autogen/include/ui_startwindow.h KursacKirill_autogen/include/ui_debugwindow.h KursacKirill_autogen/include/ui_mainwindow_1.h | ${cmake_ninja_workdir}CMakeFiles/KursacKirill_autogen ${cmake_ninja_workdir}KursacKirill_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}KursacKirill_autogen/include/ui_startwindow.h ${cmake_ninja_workdir}KursacKirill_autogen/include/ui_debugwindow.h ${cmake_ninja_workdir}KursacKirill_autogen/include/ui_mainwindow_1.h: phony KursacKirill_autogen/timestamp || KursacKirill_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

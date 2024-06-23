@@ -270,17 +270,20 @@ private:
 
     void PrintTr(Node* t, int n){ //Распечатать дерево
         if (t!= nullptr){
-            QDebug deb = qDebug();
-            PrintTr(t->left,n+20);
+            //QDebug deb = qDebug();
+            string sub = "";
+            PrintTr(t->left,n+10);
             for (int i =1; i<n; i++ ){
-                deb<<" ";
+                //deb<<" ";
+                sub+="-";
+
             }
-            deb<<SborPhoneNumber(t->data->Circledata->phoneNumber)<<"      ";
-            PrintCircle(t->data);
-            PrintTr(t->right,n+20);
+           // deb<<SborPhoneNumber(t->data->Circledata->phoneNumber)<<"      ";
+            sub+= SborPhoneNumber(t->data->Circledata->phoneNumber) + "      ";
+            PrintCircle(t->data, sub);
+            PrintTr(t->right,n+10);
         }
     }
-
 
 
     void FindDate(Node* p, vector<string> &mas, string Brand, string Model, string &out){
@@ -295,7 +298,6 @@ private:
         }
     }
 }
-
 
 
 };

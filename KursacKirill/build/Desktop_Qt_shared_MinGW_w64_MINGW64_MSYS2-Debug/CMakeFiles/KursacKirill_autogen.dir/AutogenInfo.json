@@ -274,6 +274,12 @@
 			null
 		],
 		[
+			"D:/NormKursac/KursacKirill/debugwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_debugwindow.cpp",
+			null
+		],
+		[
 			"D:/NormKursac/KursacKirill/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -359,6 +365,7 @@
 	"SETTINGS_FILE" : "D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/KursacKirill_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/NormKursac/KursacKirill/debugwindow.cpp", "MU", null ],
 		[ "D:/NormKursac/KursacKirill/main.cpp", "MU", null ],
 		[ "D:/NormKursac/KursacKirill/mainwindow.cpp", "MU", null ],
 		[ "D:/NormKursac/KursacKirill/startwindow.cpp", "MU", null ]

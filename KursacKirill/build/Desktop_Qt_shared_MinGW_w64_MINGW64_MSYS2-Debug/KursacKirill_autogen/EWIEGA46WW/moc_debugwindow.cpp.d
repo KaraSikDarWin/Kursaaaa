@@ -1,9 +1,5 @@
-D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/KursacKirill_autogen/EWIEGA46WW/moc_startwindow.cpp: D:/NormKursac/KursacKirill/startwindow.h \
+D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/KursacKirill_autogen/EWIEGA46WW/moc_debugwindow.cpp: D:/NormKursac/KursacKirill/debugwindow.h \
   D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/KursacKirill_autogen/moc_predefs.h \
-  D:/NormKursac/KursacKirill/Headears/Structures.h \
-  D:/NormKursac/KursacKirill/Headears/SupportFunctions.h \
-  D:/NormKursac/KursacKirill/debugwindow.h \
-  D:/NormKursac/KursacKirill/mainwindow.h \
   D:/msys64/mingw64/include/_mingw.h \
   D:/msys64/mingw64/include/_mingw_mac.h \
   D:/msys64/mingw64/include/_mingw_off_t.h \
@@ -25,14 +21,11 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/bits/allocator.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/atomic_base.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/atomic_lockfree_defines.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/basic_ios.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/basic_ios.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/basic_string.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/basic_string.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/char_traits.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/charconv.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/chrono.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/codecvt.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/concept_check.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/cpp_type_traits.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/cxxabi_forced.h \
@@ -42,7 +35,6 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/bits/exception.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/exception_defines.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/exception_ptr.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/fstream.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/functexcept.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/functional_hash.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/hash_bytes.h \
@@ -50,12 +42,9 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/bits/hashtable_policy.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/invoke.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/ios_base.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/istream.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/list.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/locale_classes.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/locale_classes.tcc \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/locale_facets.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/locale_facets.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/localefwd.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/memory_resource.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/memoryfwd.h \
@@ -63,7 +52,6 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/bits/nested_exception.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/new_allocator.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/node_handle.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/ostream.tcc \
   D:/msys64/mingw64/include/c++/14.1.0/bits/ostream_insert.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/parse_numbers.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/postypes.h \
@@ -90,12 +78,10 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_list.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_map.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multimap.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/stl_multiset.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_numeric.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_pair.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_raw_storage_iter.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_relops.h \
-  D:/msys64/mingw64/include/c++/14.1.0/bits/stl_set.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tempbuf.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_tree.h \
   D:/msys64/mingw64/include/c++/14.1.0/bits/stl_uninitialized.h \
@@ -128,7 +114,6 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/cstring \
   D:/msys64/mingw64/include/c++/14.1.0/ctime \
   D:/msys64/mingw64/include/c++/14.1.0/cwchar \
-  D:/msys64/mingw64/include/c++/14.1.0/cwctype \
   D:/msys64/mingw64/include/c++/14.1.0/debug/assertions.h \
   D:/msys64/mingw64/include/c++/14.1.0/debug/debug.h \
   D:/msys64/mingw64/include/c++/14.1.0/exception \
@@ -139,13 +124,9 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/ext/numeric_traits.h \
   D:/msys64/mingw64/include/c++/14.1.0/ext/string_conversions.h \
   D:/msys64/mingw64/include/c++/14.1.0/ext/type_traits.h \
-  D:/msys64/mingw64/include/c++/14.1.0/fstream \
   D:/msys64/mingw64/include/c++/14.1.0/functional \
   D:/msys64/mingw64/include/c++/14.1.0/initializer_list \
-  D:/msys64/mingw64/include/c++/14.1.0/ios \
   D:/msys64/mingw64/include/c++/14.1.0/iosfwd \
-  D:/msys64/mingw64/include/c++/14.1.0/iostream \
-  D:/msys64/mingw64/include/c++/14.1.0/istream \
   D:/msys64/mingw64/include/c++/14.1.0/iterator \
   D:/msys64/mingw64/include/c++/14.1.0/limits \
   D:/msys64/mingw64/include/c++/14.1.0/list \
@@ -154,11 +135,9 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/new \
   D:/msys64/mingw64/include/c++/14.1.0/numeric \
   D:/msys64/mingw64/include/c++/14.1.0/optional \
-  D:/msys64/mingw64/include/c++/14.1.0/ostream \
   D:/msys64/mingw64/include/c++/14.1.0/pstl/execution_defs.h \
   D:/msys64/mingw64/include/c++/14.1.0/pstl/glue_numeric_defs.h \
   D:/msys64/mingw64/include/c++/14.1.0/ratio \
-  D:/msys64/mingw64/include/c++/14.1.0/set \
   D:/msys64/mingw64/include/c++/14.1.0/stdexcept \
   D:/msys64/mingw64/include/c++/14.1.0/streambuf \
   D:/msys64/mingw64/include/c++/14.1.0/string \
@@ -184,14 +163,10 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/c++/14.1.0/variant \
   D:/msys64/mingw64/include/c++/14.1.0/vector \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/basic_file.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/c++config.h \
-  D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/c++io.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/c++locale.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
-  D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/ctype_base.h \
-  D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/ctype_inline.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/error_constants.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
   D:/msys64/mingw64/include/c++/14.1.0/x86_64-w64-mingw32/bits/gthr.h \
@@ -212,7 +187,6 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/pthread_signal.h \
   D:/msys64/mingw64/include/pthread_time.h \
   D:/msys64/mingw64/include/pthread_unistd.h \
-  D:/msys64/mingw64/include/qt6/QtCore/QTextStream \
   D:/msys64/mingw64/include/qt6/QtCore/q20functional.h \
   D:/msys64/mingw64/include/qt6/QtCore/q20memory.h \
   D:/msys64/mingw64/include/qt6/QtCore/q20type_traits.h \
@@ -356,14 +330,8 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
   D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/QDialog \
-  D:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
-  D:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox \
   D:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \
-  D:/msys64/mingw64/include/qt6/QtWidgets/qdialogbuttonbox.h \
-  D:/msys64/mingw64/include/qt6/QtWidgets/qmainwindow.h \
-  D:/msys64/mingw64/include/qt6/QtWidgets/qmessagebox.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h \
-  D:/msys64/mingw64/include/qt6/QtWidgets/qtabwidget.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qtwidgets-config.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qtwidgetsexports.h \
   D:/msys64/mingw64/include/qt6/QtWidgets/qtwidgetsglobal.h \
@@ -387,6 +355,5 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/time.h \
   D:/msys64/mingw64/include/vadefs.h \
   D:/msys64/mingw64/include/wchar.h \
-  D:/msys64/mingw64/include/wctype.h \
   D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.1.0/include/mm_malloc.h \
   D:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.1.0/include/stdbool.h

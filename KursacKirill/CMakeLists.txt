@@ -29,6 +29,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         startwindow.h startwindow.cpp startwindow.ui
+        debugwindow.h debugwindow.cpp debugwindow.ui
+        mainwindow_1.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET KursacKirill APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

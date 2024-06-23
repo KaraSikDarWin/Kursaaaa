@@ -21,6 +21,7 @@ void StartWindow::clHashTableInBtn()
         inputFile.close();
     }
     mainWin->show();
+    this->close();
     ui->HashTableInBtn->setEnabled(false);
     emit ToMainSignal(ui->HashTableSizeIn->value(), filesize);
 }
@@ -31,7 +32,7 @@ StartWindow::StartWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
-    mainWin = new MainWindow(this);
+    mainWin = new MainWindow();
     connect(ui->HashTableInBtn, SIGNAL(clicked()), this,SLOT(clHashTableInBtn()));
     connect(this,&StartWindow::ToMainSignal,mainWin, &MainWindow::startSignal);
 }

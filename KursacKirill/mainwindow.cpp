@@ -11,6 +11,9 @@
 #include <QStringDecoder>
 #include <QDate>
 #include <QMessageBox>
+#include <QTreeView>
+#include <QStandardItemModel>
+#include <QTextEdit>
 
 class HashTable{
     int size;
@@ -26,7 +29,6 @@ private:
             NonEmptyNodes++;
             return 1;
         } else {qDebug()<<"Same Element"; return 0; }
-
     }
 
     bool CheckUnique(Elem* p, int hash){
@@ -44,7 +46,6 @@ private:
 
 public:
 
-
     bool Find(string NUM, string PhoneNumber, string BRAND, string MODEl){
         vector<string> mas;
         SplitNum(NUM,mas);
@@ -53,7 +54,6 @@ public:
         mas.push_back(MODEl);
         int hash = MultHash(BRAND,MODEl,stoi(mas[0]), stoi(mas[1]),mas[2]);
         return Table[hash].LinkNode->IsThisElement(stoi(mas[3]), stoi(mas[4]), mas[5]);
-
     }
 
     string FindDateHash(string NUM, string PhoneNumber, string BRAND, string MODEl){
@@ -116,8 +116,6 @@ public:
             }
             inputFile.close();
         }
-
-
         cout<<"Reading data finished..."<<endl;
     }
 
@@ -136,31 +134,29 @@ public:
     ~HashTable(){
         Table.clear();
     }
-
 };
 
 HashTable * table = nullptr;
-int lines =0;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    deb = new DebugWindow();
     connect(ui->FindNodeBtn, SIGNAL(clicked()), this, SLOT(FindBtnBtn()));
     connect(ui->InitialButton, SIGNAL(clicked()), this, SLOT(Initial()));
     connect(ui->DeleteNodeBtn,SIGNAL(clicked()), this, SLOT(DelBtnBtn()));
     connect(ui->SaveBtnBtn, SIGNAL(clicked()), this, SLOT(SaveBtn()));
     connect(ui->AddNodeBtn,SIGNAL(clicked()),this,SLOT(AddBtnBtn()));
-   // connect(this,&MainWindow::startSignal, startWin,&StartWindow::SecondSlot);
+    connect(ui->HelpBtn, SIGNAL(clicked()), this, SLOT(HelpBtn()));
+    connect(this,&MainWindow::toDebugSignal, deb,&DebugWindow::startSignal);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::startSignal(int string, int filelength)
 {
@@ -182,6 +178,7 @@ void MainWindow::Initial()
     ui->BaseTable->clearContents();
     ui->BaseTable->setRowCount(0);
     MainWindow::PrintToTable();
+    MainWindow::PrintHashTableDebug();
 }
 
 void MainWindow::SaveBtn(){
@@ -192,6 +189,13 @@ void MainWindow::SaveBtn(){
         PrintToTableWrite(writestream);
     }
     fileout.close();
+}
+
+void MainWindow::HelpBtn()
+{
+    qDebug()<<"Help";
+    deb->show();
+    emit toDebugSignal();
 }
 
 void MainWindow::AddBtnBtn()
@@ -213,6 +217,8 @@ void MainWindow::AddBtnBtn()
             ui->BaseTable->clearContents();
             ui->BaseTable->setRowCount(0);
             PrintToTable();
+            table->PrintHashTable();
+            MainWindow::PrintHashTableDebug();
         }else{
             QMessageBox Warn;
             Warn.setIcon(QMessageBox::Critical);
@@ -241,6 +247,8 @@ void MainWindow::DelBtnBtn()
             ui->BaseTable->clearContents();
             ui->BaseTable->setRowCount(0);
             PrintToTable();
+            table->PrintHashTable();
+            MainWindow::PrintHashTableDebug();
         }else{
             QMessageBox Warn;
             Warn.setIcon(QMessageBox::Critical);
@@ -301,13 +309,10 @@ inline void MainWindow::WalkCirle(Circle* head){//напечатать спис�
         Circle *run = head;
         if (head->next==head){
             MainWindow::AddRow(head);
-
         }else{
         while (run->next != head) {
-
             MainWindow::AddRow(run);
             run = run->next;
-
         }
         MainWindow::AddRow(run);
         }
@@ -336,10 +341,8 @@ inline void MainWindow::WalkCirleWrite(Circle* head, QTextStream &writestream){/
 
         }else{
             while (run->next != head) {
-
                 writestream<<QString::fromStdString(StringTo(run->Circledata))+'\n';
                 run = run->next;
-
             }
             writestream<<QString::fromStdString(StringTo(run->Circledata))+'\n';
         }
@@ -357,5 +360,41 @@ void MainWindow::WalkTreeWrite(Node* t,QTextStream &writestream){
 void MainWindow::PrintToTableWrite(QTextStream &writestream){
     for(int i =0; i<table->IsSize(); i++){
         MainWindow::WalkTreeWrite(table->isVector()[i].LinkNode->rootIs(), writestream);
+    }
+}
+
+void MainWindow::PrintHashTableDebug(){
+    ui->DebugTab->clear();
+    for (int i = 0; i<table->IsSize();i++){
+        ui->DebugTab->append(QString::fromStdString(to_string(i)+":"));
+        MainWindow::PrintTrDebug(table->isVector()[i].LinkNode->rootIs(),1);
+        ui->DebugTab->append("--------------------------------------------------");
+    }
+}
+
+void MainWindow::PrintTrDebug(Node* t, int n){ //Распечатать дерево
+    if (t!= nullptr){
+        string sub = "";
+        PrintTrDebug(t->left,n+10);
+        for (int i =1; i<n; i++ ){
+            sub+="-";
+        }
+        sub+= SborPhoneNumber(t->data->Circledata->phoneNumber) + "      ";
+        PrintCircleDebug(t->data, sub);
+        PrintTrDebug(t->right,n+10);
+    }
+}
+
+void MainWindow::PrintCircleDebug(Circle* head, string &sub){//напечатать список указатель на который в каждом узле
+    if (head!= nullptr) {
+        Circle *run = head;
+        while (run->next != head) {
+            sub += StringForOutput(*run->Circledata);
+            sub+= "/";
+            run = run->next;
+        }
+
+        sub += StringForOutput(*run->Circledata);
+        ui->DebugTab->append(QString::fromStdString(sub+"\n"));
     }
 }

@@ -9,6 +9,8 @@ KursacKirill_autogen/timestamp: \
 	D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/KursacKirill_autogen/moc_predefs.h \
+	D:/NormKursac/KursacKirill/debugwindow.cpp \
+	D:/NormKursac/KursacKirill/debugwindow.h \
 	D:/NormKursac/KursacKirill/main.cpp \
 	D:/NormKursac/KursacKirill/mainwindow.cpp \
 	D:/NormKursac/KursacKirill/mainwindow.h \
@@ -561,6 +563,7 @@ KursacKirill_autogen/timestamp: \
 	D:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake \
 	D:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake \
 	D:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake \
+	D:/NormKursac/KursacKirill/debugwindow.ui \
 	D:/NormKursac/KursacKirill/mainwindow.ui \
 	D:/NormKursac/KursacKirill/startwindow.ui \
 	D:/msys64/mingw64/bin/cmake.exe

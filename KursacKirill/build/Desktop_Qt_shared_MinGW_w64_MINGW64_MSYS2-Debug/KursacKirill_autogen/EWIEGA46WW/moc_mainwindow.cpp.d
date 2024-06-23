@@ -2,6 +2,7 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/KursacKirill_autogen/moc_predefs.h \
   D:/NormKursac/KursacKirill/Headears/Structures.h \
   D:/NormKursac/KursacKirill/Headears/SupportFunctions.h \
+  D:/NormKursac/KursacKirill/debugwindow.h \
   D:/msys64/mingw64/include/_mingw.h \
   D:/msys64/mingw64/include/_mingw_mac.h \
   D:/msys64/mingw64/include/_mingw_off_t.h \
@@ -353,6 +354,7 @@ D:/NormKursac/KursacKirill/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug
   D:/msys64/mingw64/include/qt6/QtGui/qtransform.h \
   D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
   D:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
+  D:/msys64/mingw64/include/qt6/QtWidgets/QDialog \
   D:/msys64/mingw64/include/qt6/QtWidgets/QMainWindow \
   D:/msys64/mingw64/include/qt6/QtWidgets/QMessageBox \
   D:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \

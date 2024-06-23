@@ -1,4 +1,5 @@
 #pragma once
+#include "D:/NormKursac/KursacKirill/mainwindow.h";
 #include "Structures.h"
 #include <QDebug>
 #include <QLine>
@@ -27,17 +28,23 @@ inline void Add(Circle* &head, Elem* &x){ //Добавление элемент�
     }
 }//
 
-inline void PrintCircle(Circle* head){//напечатать список указатель на который в каждом узле
+inline void PrintCircle(Circle* head, string &sub){//напечатать список указатель на который в каждом узле
     if (head!= nullptr) {
         Circle *run = head;
         while (run->next != head) {
 
-            qDebug() << StringForOutput(*run->Circledata);
-            qDebug() << "/";
+            //deb << StringForOutput(*run->Circledata);
+            sub += StringForOutput(*run->Circledata);
+            //deb << "/";
+            sub+= "/";
             run = run->next;
         }
 
-        qDebug() << StringForOutput(*run->Circledata);
+        //deb << StringForOutput(*run->Circledata);
+        sub += StringForOutput(*run->Circledata);
+        qDebug() << sub;
+
+
     }
     //else cout<<"List doesn't exist!"<<endl;
 }//
