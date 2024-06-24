@@ -134,7 +134,11 @@ inline string SborBrandModel(BrandName &brandName){
 
 inline string SborDate(Date &date){
     string out;
-    out = to_string(date.Day)+"."+date.Month+"."+to_string(date.Year);
+    string day;
+    if (date.Day < 10){
+        day = "0" + to_string(date.Day);
+    }else day = to_string(date.Day);
+    out = day + "."+date.Month + "." + to_string(date.Year);
     return out;
 }
 

@@ -118,6 +118,7 @@ public:
         GovNumbLine = new QLineEdit(groupBox);
         GovNumbLine->setObjectName("GovNumbLine");
         GovNumbLine->setGeometry(QRect(10, 40, 121, 20));
+        GovNumbLine->setMaxLength(6);
 
         horizontalLayout_3->addWidget(groupBox);
 
@@ -126,6 +127,7 @@ public:
         PhonLine = new QLineEdit(groupBox_2);
         PhonLine->setObjectName("PhonLine");
         PhonLine->setGeometry(QRect(10, 40, 121, 20));
+        PhonLine->setMaxLength(11);
 
         horizontalLayout_3->addWidget(groupBox_2);
 
@@ -134,6 +136,7 @@ public:
         BrendLine = new QLineEdit(groupBox_3);
         BrendLine->setObjectName("BrendLine");
         BrendLine->setGeometry(QRect(10, 40, 121, 20));
+        BrendLine->setMaxLength(30);
 
         horizontalLayout_3->addWidget(groupBox_3);
 
@@ -142,6 +145,7 @@ public:
         ModelLine = new QLineEdit(groupBox_4);
         ModelLine->setObjectName("ModelLine");
         ModelLine->setGeometry(QRect(10, 40, 121, 20));
+        ModelLine->setMaxLength(30);
 
         horizontalLayout_3->addWidget(groupBox_4);
 
@@ -212,9 +216,13 @@ public:
         DeleteNodeBtn->setText(QCoreApplication::translate("MainWindow", "\320\243\320\264\320\260\320\273\320\270\321\202\321\214", nullptr));
         FindNodeBtn->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\320\271\321\202\320\270 \320\264\320\260\321\202\321\203", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\320\223\320\276\321\201. \320\275\320\276\320\274\320\265\321\200", nullptr));
+        GovNumbLine->setPlaceholderText(QCoreApplication::translate("MainWindow", "X353AY", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\320\260", nullptr));
+        PhonLine->setPlaceholderText(QCoreApplication::translate("MainWindow", "89244567283", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\320\221\321\200\320\265\320\275\320\264 \320\260\320\262\321\202\320\276", nullptr));
+        BrendLine->setPlaceholderText(QCoreApplication::translate("MainWindow", "Nissan", nullptr));
         groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "\320\234\320\260\321\200\320\272\320\260 \320\260\320\262\321\202\320\276", nullptr));
+        ModelLine->setPlaceholderText(QCoreApplication::translate("MainWindow", "Note", nullptr));
         HelpBtn->setText(QCoreApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", nullptr));
         QTableWidgetItem *___qtablewidgetitem = BaseTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "\320\223\320\276\321\201. \320\275\320\276\320\274\320\265\321\200", nullptr));

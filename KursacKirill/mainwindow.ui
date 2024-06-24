@@ -136,6 +136,12 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+        <property name="placeholderText">
+         <string>X353AY</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -152,6 +158,12 @@
           <width>121</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="maxLength">
+         <number>11</number>
+        </property>
+        <property name="placeholderText">
+         <string>89244567283</string>
         </property>
        </widget>
       </widget>
@@ -170,6 +182,12 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="maxLength">
+         <number>30</number>
+        </property>
+        <property name="placeholderText">
+         <string>Nissan</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -186,6 +204,12 @@
           <width>121</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="maxLength">
+         <number>30</number>
+        </property>
+        <property name="placeholderText">
+         <string>Note</string>
         </property>
        </widget>
       </widget>
