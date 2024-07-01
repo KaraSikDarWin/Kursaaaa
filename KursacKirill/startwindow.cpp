@@ -19,11 +19,18 @@ void StartWindow::clHashTableInBtn()
             in.readLine();
         }
         inputFile.close();
+        mainWin->setFixedSize(QSize(907,500));
+        mainWin->show();
+        this->close();
+        ui->HashTableInBtn->setEnabled(false);
+        emit ToMainSignal(ui->HashTableSizeIn->value(), filesize);
+    }else {
+        QMessageBox Alarm;
+        Alarm.setIcon(QMessageBox::Critical);
+        Alarm.setText("Не найден файл для считывания DataBase.txt");
+        Alarm.exec();
     }
-    mainWin->show();
-    this->close();
-    ui->HashTableInBtn->setEnabled(false);
-    emit ToMainSignal(ui->HashTableSizeIn->value(), filesize);
+
 }
 
 StartWindow::StartWindow(QWidget *parent)
@@ -32,6 +39,7 @@ StartWindow::StartWindow(QWidget *parent)
 {
 
     ui->setupUi(this);
+    this->setFixedSize(QSize(231,187));
     mainWin = new MainWindow();
     connect(ui->HashTableInBtn, SIGNAL(clicked()), this,SLOT(clHashTableInBtn()));
     connect(this,&StartWindow::ToMainSignal,mainWin, &MainWindow::startSignal);

@@ -1,5 +1,5 @@
 #pragma once
-#include "D:/NormKursac/KursacKirill/mainwindow.h";
+#include "D:/NormKursac/KursacKirill/mainwindow.h"
 #include "Structures.h"
 #include <QDebug>
 #include <QLine>
@@ -86,7 +86,8 @@ inline bool SearchingDate(Circle* head, int day, string month , int year){//Пр
             return flag;
         } else return flag;
     }
-}//
+    return 0;
+}
 
 inline bool SearchingDateFIND(Circle* &head, vector<string> &mas,string Brand, string Model, string &out){
     if(head!= nullptr) {
@@ -107,6 +108,7 @@ inline bool SearchingDateFIND(Circle* &head, vector<string> &mas,string Brand, s
             return 1;
         } else return 0;
     }
+    return 0;
 }
 
 inline bool SearchingNumbAndMB(Circle* head, vector<string> &mas, string Brand, string Model) {//Проверка наличия элемента в списке указатель на который находится в каждом узле
@@ -126,6 +128,7 @@ inline bool SearchingNumbAndMB(Circle* head, vector<string> &mas, string Brand, 
         return flag;
 
     }
+    return 0;
 }
 
 inline void DelCircle(Circle* &head){

@@ -10,46 +10,19 @@
     <height>500</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>База данных ГАИ</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="InitialBox">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>280</y>
-      <width>401</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Инициализация</string>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QSpinBox" name="InitialSpin"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="InitialButton">
-         <property name="text">
-          <string>Загрузить данные</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="SaveBtnBtn">
-         <property name="text">
-          <string>Сохранить</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
    <widget class="QPushButton" name="AddNodeBtn">
     <property name="geometry">
      <rect>
@@ -136,6 +109,15 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+        <property name="placeholderText">
+         <string>X353AY</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -153,13 +135,22 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="inputMethodHints">
+         <set>Qt::InputMethodHint::ImhNone</set>
+        </property>
+        <property name="maxLength">
+         <number>11</number>
+        </property>
+        <property name="placeholderText">
+         <string>89084548343</string>
+        </property>
        </widget>
       </widget>
      </item>
      <item>
       <widget class="QGroupBox" name="groupBox_3">
        <property name="title">
-        <string>Бренд авто</string>
+        <string>Марка авто</string>
        </property>
        <widget class="QLineEdit" name="BrendLine">
         <property name="geometry">
@@ -170,13 +161,19 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="maxLength">
+         <number>30</number>
+        </property>
+        <property name="placeholderText">
+         <string>Nissan</string>
+        </property>
        </widget>
       </widget>
      </item>
      <item>
       <widget class="QGroupBox" name="groupBox_4">
        <property name="title">
-        <string>Марка авто</string>
+        <string>Модель авто</string>
        </property>
        <widget class="QLineEdit" name="ModelLine">
         <property name="geometry">
@@ -187,29 +184,16 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="maxLength">
+         <number>30</number>
+        </property>
+        <property name="placeholderText">
+         <string>Note</string>
+        </property>
        </widget>
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QPushButton" name="HelpBtn">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>360</y>
-      <width>81</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Справка</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>15</width>
-      <height>100</height>
-     </size>
-    </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
@@ -217,11 +201,11 @@
       <x>0</x>
       <y>0</y>
       <width>901</width>
-      <height>281</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -233,7 +217,7 @@
         <x>0</x>
         <y>0</y>
         <width>901</width>
-        <height>261</height>
+        <height>341</height>
        </rect>
       </property>
       <property name="editTriggers">
@@ -323,7 +307,7 @@
         <x>0</x>
         <y>0</y>
         <width>891</width>
-        <height>251</height>
+        <height>341</height>
        </rect>
       </property>
       <property name="readOnly">
@@ -331,6 +315,19 @@
       </property>
      </widget>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="SaveBtnBtn">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>380</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сохранить</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

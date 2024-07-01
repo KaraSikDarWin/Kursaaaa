@@ -28,12 +28,10 @@ signals:
 
 public slots:
     void startSignal(int string, int filelength);
-    void Initial();
     void AddBtnBtn();
     void DelBtnBtn();
     void FindBtnBtn();
-    void SaveBtn();
-    void HelpBtn();
+    void SaveBtn();   
 public:
     void WalkCirle(Circle *head);
     void WalkTree(Node *t);

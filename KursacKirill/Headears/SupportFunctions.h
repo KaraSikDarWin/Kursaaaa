@@ -134,7 +134,11 @@ inline string SborBrandModel(BrandName &brandName){
 
 inline string SborDate(Date &date){
     string out;
-    out = to_string(date.Day)+"."+date.Month+"."+to_string(date.Year);
+    string day;
+    if (date.Day < 10){
+        day = "0" + to_string(date.Day);
+    }else day = to_string(date.Day);
+    out = day + "."+date.Month + "." + to_string(date.Year);
     return out;
 }
 
@@ -192,25 +196,29 @@ inline bool IsCorrectNumber(string input){
 }
 
 inline bool IsCorrectBrand(string input){
+    set<string> brands {"Toyota", "Nissan", "Lada", "Tank", "Mercedes", "BMW", "Honda","Hyundai","Kia","Lexus"};
     if (input.length()!=0){
-        for (int i = 0; i<input.length(); i++){
-            if (!(isalpha(input[i]))){
-                return false;
-            }
-        }
-        return true;
+        // for (int i = 0; i<input.length(); i++){
+        //     if (!(isalpha(input[i]))){
+        //         return false;
+        //     }
+        // }
+        // return true;
+        if(brands.count(input)) return true; else return false;
     }else return false;
 }
 
 inline bool IsCorrectModel(string input){
-    set<char> numbers {'1','0','2','3','4','5','6','7','8','9'};
+   // set<char> numbers {'1','0','2','3','4','5','6','7','8','9'};
+    set <string> models {"Chaser","Mark 2", "Cresta", "Camry", " Land Cruiser Prado", "Note", "Juke", "Granta", "Vesta", "Priora", "300", "G63", "G65", "M4","X6","M3","Fit", "HRV", "Solaris", "Rio", "LX570"};
     if (input.length()!=0){
-        for (int i = 0; i<input.length(); i++){
-            if (!(isalpha(input[i]) or numbers.count(input[i]) or input[i]==' ')){
-                return false;
-            }
-        }
-        return true;
+        // for (int i = 0; i<input.length(); i++){
+        //     if (!(isalpha(input[i]) or numbers.count(input[i]) or input[i]==' ')){
+        //         return false;
+        //     }
+        // }
+        // return true;
+        if(models.count(input))return true; else return false;
     }return false;
 }
 
